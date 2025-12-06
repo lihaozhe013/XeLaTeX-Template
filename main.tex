@@ -1,17 +1,25 @@
 \documentclass[9pt]{article}
 \usepackage[margin=2cm]{geometry}
-
 % ========== 调整行距宏包 ==========
 \usepackage{setspace}
 
-% 推荐：将行距设置为单倍行距的 0.9 或 0.95 倍
-% 1.0 表示标准单倍行距，0.8-0.95通常效果最好
+% 推荐: 将行距设置为单倍行距的 0.9 或 0.95 倍
+% 1.0 表示标准单倍行距, 0.8-0.95通常效果最好
 \linespread{1}\selectfont 
 
 \usepackage{fontspec}
 \usepackage{xeCJK}
-\usepackage{unicode-math} % this also loads fontspec
 \setCJKmainfont{SourceHanSansSC-Regular.otf}[
+    Path = src/fonts/SourceHanSansSC/,
+    UprightFont = SourceHanSansSC-Regular.otf,
+    BoldFont    = SourceHanSansSC-Bold.otf,
+    FontFace = {m}{n}{Font = SourceHanSansSC-Medium.otf},
+    FontFace = {h}{n}{Font = SourceHanSansSC-Heavy.otf},
+    Extension = .otf,
+    AutoFakeSlant = false,
+    AutoFakeBold = false
+]
+\setmainfont{SourceHanSansSC-Regular.otf}[
     Path = src/fonts/SourceHanSansSC/,
     UprightFont = SourceHanSansSC-Regular.otf,
     BoldFont    = SourceHanSansSC-Bold.otf,
