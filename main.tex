@@ -1,0 +1,42 @@
+\documentclass[9pt]{article}
+\usepackage[margin=2cm]{geometry}
+
+% ========== 调整行距宏包 ==========
+\usepackage{setspace}
+
+% 推荐：将行距设置为单倍行距的 0.9 或 0.95 倍
+% 1.0 表示标准单倍行距，0.8-0.95通常效果最好
+\linespread{1}\selectfont 
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{unicode-math} % this also loads fontspec
+\setCJKmainfont{SourceHanSansSC-Regular.otf}[
+    Path = src/fonts/SourceHanSansSC/,
+    UprightFont = SourceHanSansSC-Regular.otf,
+    BoldFont    = SourceHanSansSC-Bold.otf,
+    FontFace = {m}{n}{Font = SourceHanSansSC-Medium.otf},
+    FontFace = {h}{n}{Font = SourceHanSansSC-Heavy.otf},
+    Extension = .otf,
+    AutoFakeSlant = false,
+    AutoFakeBold = false
+]
+
+% ========== Emoji 字体设置 ==========
+\newfontfamily{\emojifont}{NotoEmoji-Regular.ttf}[
+    Path = src/fonts/
+]
+\usepackage{newunicodechar}
+\DeclareRobustCommand{\emoji}[1]{{\emojifont #1}}
+\input{src/latex_emoji_list}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % 清空页眉
+\fancyfoot{} % 清空页脚
+\fancyfoot[C]{第 \thepage\ 页} % 在页脚中间 (C) 放置“第 X 页”
+\renewcommand{\headrulewidth}{0pt} % 移除页眉横线
+\renewcommand{\footrulewidth}{0pt} % 增加页脚横线
+
+\begin{document}
+
+\end{document}
