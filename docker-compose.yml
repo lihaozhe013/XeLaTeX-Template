@@ -1,7 +1,7 @@
 services:
   latex:
     image: registry.gitlab.com/islandoftex/images/texlive:latest
-    container_name: latex-docker-template
+    container_name: xelatex-docker-template
     working_dir: /workdir
     volumes:
       - .:/workdir
